@@ -1,0 +1,949 @@
+<Project>
+  <Name>A3 - Linked List</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>A3 Initial Design</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>BasicDoubleLinkedList</Name>
+        <Access>Public</Access>
+        <Location left="846" top="629" />
+        <Size width="435" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int size</Member>
+        <Member type="Field">private Node&lt;T&gt; firstNode</Member>
+        <Member type="Field">private Node&lt;T&gt; lastNode</Member>
+        <Member type="Constructor">public BasicDoubleLinkedList()</Member>
+        <Member type="Method">public BasicDoubleLinkedList&lt;T&gt; addToFront(T data)</Member>
+        <Member type="Method">public BasicDoubleLinkedList&lt;T&gt; addToEnd(T data)</Member>
+        <Member type="Method">public T retrieveFirstElement()</Member>
+        <Member type="Method">public T retrieveLastElement()</Member>
+        <Member type="Method">public T getFirst()</Member>
+        <Member type="Method">public T getLast()</Member>
+        <Member type="Method">public ArrayList&lt;T&gt; toArrayList()</Member>
+        <Member type="Method">public ListIterator&lt;T&gt; iterator()</Member>
+        <Member type="Method">public BasicDoubleLinkedList&lt;T&gt; remove(T targetData, Comparator&lt;T&gt; comparator)</Member>
+        <Member type="Method">public void clear()</Member>
+        <Member type="Method">public int getSize()</Member>
+        <Member type="Method">public boolean isEmpty()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SortedDoubleLinkedList</Name>
+        <Access>Public</Access>
+        <Location left="846" top="1027" />
+        <Size width="203" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int size</Member>
+        <Member type="Field">private Node&lt;T&gt; firstNode</Member>
+        <Member type="Field">private Node&lt;T&gt; lastNode</Member>
+        <Member type="Constructor">public SortedDoubleLinkedList()</Member>
+        <Member type="Constructor">public SortedDoubleLinkedList(T data)</Member>
+        <Member type="Method">public void add(T data)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>* .addToFront() and .addToEnd() are not to be supported for the S.D.L. List, and will throw UnsupportedOperationExceptions.</Text>
+        <Location left="846" top="1251" />
+        <Size width="237" height="60" />
+      </Entity>
+      <Entity type="Class">
+        <Name>Node</Name>
+        <Access>Public</Access>
+        <Location left="1300" top="1027" />
+        <Size width="262" height="162" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private E elementData</Member>
+        <Member type="Field">private Node&lt;E&gt; next</Member>
+        <Member type="Field">private Node&lt;E&gt; previous</Member>
+        <Member type="Constructor">public Node(E firstNode)</Member>
+        <Member type="Constructor">public Node(E currentData, Node&lt;E&gt; nextNode)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Node will be implemented as an inner class.</Text>
+        <Location left="1609" top="1027" />
+        <Size width="147" height="51" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Comment" first="2" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>928</X>
+          <Y>1231</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="0" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1324</X>
+          <Y>657</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1430</X>
+          <Y>994</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1099</X>
+          <Y>1053</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1226</X>
+          <Y>1053</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="4" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1584</X>
+          <Y>1052</Y>
+        </BendPoint>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>A3 Node Structure</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="481" top="232" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="715" top="232" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>E</Name>
+        <Access>Public</Access>
+        <Location left="463" top="626" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="1799" top="1779" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="1799" top="1719" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="1799" top="1663" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>D</Name>
+        <Access>Public</Access>
+        <Location left="1194" top="232" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="950" top="232" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="1799" top="1603" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Initial BasicDoubleLinkedList Structure with 4 Nodes</Text>
+        <Location left="178" top="232" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="410" top="93" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1399" top="91" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>.addToFront()</Text>
+        <Location left="190" top="626" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1563" top="485" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="422" top="487" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Class">
+        <Name>D</Name>
+        <Access>Public</Access>
+        <Location left="1358" top="626" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="1114" top="626" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="879" top="626" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="655" top="626" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>E</Name>
+        <Access>Public</Access>
+        <Location left="437" top="877" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="686" top="877" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>D</Name>
+        <Access>Public</Access>
+        <Location left="1389" top="877" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="1145" top="877" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="910" top="877" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="453" top="738" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1594" top="736" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head !&gt; A
+Head &gt; E
+
+D !&gt; A
+D &gt; E
+
+E &gt; A</Text>
+        <Location left="190" top="844" />
+        <Size width="160" height="123" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>.addToEnd()</Text>
+        <Location left="203" top="1330" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1679" top="1177" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="435" top="1191" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Class">
+        <Name>D</Name>
+        <Access>Public</Access>
+        <Location left="1219" top="1330" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="975" top="1330" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="740" top="1330" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="506" top="1330" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>E</Name>
+        <Access>Public</Access>
+        <Location left="1461" top="1330" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1679" top="1481" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Class">
+        <Name>E</Name>
+        <Access>Public</Access>
+        <Location left="1461" top="1634" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="506" top="1634" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>D !&gt; A
+D &gt; E
+
+Tail !&gt; D
+Tail &gt; E
+
+E &gt; A</Text>
+        <Location left="203" top="1634" />
+        <Size width="160" height="117" />
+      </Entity>
+      <Entity type="Class">
+        <Name>D</Name>
+        <Access>Public</Access>
+        <Location left="1219" top="1634" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="975" top="1634" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="740" top="1634" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="435" top="1495" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>.retrieveFirstElement()</Text>
+        <Location left="203" top="2018" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1253" top="1877" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="435" top="1879" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Class">
+        <Name>D</Name>
+        <Access>Public</Access>
+        <Location left="1048" top="2018" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="804" top="2018" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="569" top="2018" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="569" top="2378" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="804" top="2378" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>D</Name>
+        <Access>Public</Access>
+        <Location left="1048" top="2378" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="435" top="2239" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1253" top="2237" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head !&gt; A
+Head &gt; B
+D !&gt; A
+D &gt; B</Text>
+        <Location left="203" top="2378" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail !&gt; D
+Tail &gt; C
+C !&gt; D
+C &gt; A</Text>
+        <Location left="203" top="3088" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="569" top="2728" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="804" top="2728" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="1048" top="2728" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>C</Name>
+        <Access>Public</Access>
+        <Location left="1048" top="3088" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>B</Name>
+        <Access>Public</Access>
+        <Location left="804" top="3088" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>A</Name>
+        <Access>Public</Access>
+        <Location left="569" top="3088" />
+        <Size width="162" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1253" top="2947" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="435" top="2949" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Head</Text>
+        <Location left="435" top="2589" />
+        <Size width="59" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Tail</Text>
+        <Location left="1253" top="2587" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>.retrieveLastElement()</Text>
+        <Location left="203" top="2728" />
+        <Size width="160" height="75" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="7" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="6" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1277</X>
+          <Y>331</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>564</X>
+          <Y>302</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="10" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="11" second="6">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="13" second="15">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="16" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="17" second="16">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="18" second="17">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="20" second="23">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="23" second="22">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="22" second="21">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="25" second="21">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="24" second="19">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="19" second="20">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>624</X>
+          <Y>898</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>661</X>
+          <Y>898</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="21" second="19">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1471</X>
+          <Y>958</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>516</X>
+          <Y>969</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="29" second="33">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="31" second="30">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="32" second="31">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="33" second="32">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="37" second="41">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="41" second="40">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="40" second="39">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="42" second="37">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="39" second="36">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="36" second="37">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1533</X>
+          <Y>1704</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>586</X>
+          <Y>1724</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="35" second="36">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="44" second="46">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="47" second="46">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="48" second="47">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="49" second="50">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="50" second="51">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="53" second="51">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="52" second="49">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="51" second="49">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1129</X>
+          <Y>2448</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>649</X>
+          <Y>2448</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="59" second="61">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1129</X>
+          <Y>3158</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>649</X>
+          <Y>3158</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="63" second="61">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="62" second="59">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="60" second="59">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="61" second="60">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="56" second="57">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="57" second="58">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="64" second="56">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
